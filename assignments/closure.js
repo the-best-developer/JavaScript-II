@@ -1,5 +1,23 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const favDay = () => {
+  myFavoriteDay = "Friday";
+
+  return function (day) {
+    if (day){
+      myFavoriteDay = day;
+      return `My favorite day is ${myFavoriteDay}`;
+    }
+    else {
+      return `My favorite day is ${myFavoriteDay}`;
+    }
+  }
+}
+const newDay = favDay()
+
+console.log(newDay());
+console.log(newDay("Today"));
+console.log(newDay());
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
