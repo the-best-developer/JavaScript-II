@@ -81,6 +81,21 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+let hiddenEmails = runners.map(function (guest){
+    let newEmail = ""
+    for(i= 0; i < guest.email.length; i++) {
+        if(guest.email[i] === "@") {
+            for( j = 0; j < i - 3; j++) {
+                newEmail = newEmail + "*"
+            }
+            for( j = i - 3; j < guest.email.length; j++) {
+                newEmail = newEmail + guest.email[j];
+            }
+        }
+    }
+    return (newEmail)
+})
+console.log (hiddenEmails)
 
 // Problem 2
 let WhoFromCompany = []
