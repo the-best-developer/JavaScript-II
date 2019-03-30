@@ -81,24 +81,34 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+
+// A loop to mask the email of the donors
 let hiddenEmails = runners.map(function (guest){
+    //define a new string and replace the username with stars
     let newEmail = ""
     for(i= 0; i < guest.email.length; i++) {
         if(guest.email[i] === "@") {
             for( j = 0; j < i - 3; j++) {
                 newEmail = newEmail + "*"
             }
+            //contine concatenating the rest of the address pass the @ symbol
             for( j = i - 3; j < guest.email.length; j++) {
                 newEmail = newEmail + guest.email[j];
             }
         }
     }
+    //return the masked email string
     return (newEmail)
 })
 console.log (hiddenEmails)
 
 // Problem 2
+// Make a nice list for name badges
 let WhoFromCompany = []
 WhoFromCompany = runners.map(item => item.first_name + " " + item.last_name[0] + " @ " + item.company_name);
 console.log(WhoFromCompany);
+
 // Problem 3
+//Calculate the average donation
+ticketPriceTotal = runners.reduce((acc, val) => acc + val.donation / runners.length, 0)
+console.log(ticketPriceTotal);
