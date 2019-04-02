@@ -110,5 +110,5 @@ console.log(WhoFromCompany);
 
 // Problem 3
 //Calculate the average donation
-ticketPriceTotal = runners.reduce((acc, val) => acc + val.donation / runners.length, 0)
-console.log(ticketPriceTotal);
+donationTotal = runners.reduce((acc, val) => acc + val.donation / runners.length, 0)
+console.log(donationTotal);
